@@ -1,3 +1,3 @@
 import Modal from './component/modal'
 
-export {Modal} 
+export { Modal } 
