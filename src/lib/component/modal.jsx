@@ -1,4 +1,4 @@
-import React from "react"
+import React, { forwardRef } from "react"
 import { useRef } from "react"
 import "./modal.css"
 
@@ -9,6 +9,9 @@ function Modal({ isOpen, onClose, title, subTitle, content }) {
       ref.current.focus()
     }
   }, [])
+  const Button = forwardRef((props, ref) => (
+<button ref={ref}>{props.children}</button>
+  ))
   if (isOpen) {
     return (
       <dialog className='modal'>
@@ -16,9 +19,9 @@ function Modal({ isOpen, onClose, title, subTitle, content }) {
           <header className='header'>
             <h1 className='title'>{title}</h1>
             <span className='subtitle'>{subTitle}</span>
-            <button ref={ref} className='btn' onClick={onClose}>
+            <Button ref={ref} className='btn' onClick={onClose}>
               x
-            </button>
+            </Button>
           </header>
           <div className='content-container'>{content}</div>
           <footer className='footer'></footer>
