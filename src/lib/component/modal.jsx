@@ -1,7 +1,14 @@
 import React from "react"
+import { useRef } from "react"
 import "./modal.css"
 
 function Modal({ isOpen, onClose, title, subTitle, content }) {
+  const ref = useRef(null)
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.focus()
+    }
+  }, [])
   if (isOpen) {
     return (
       <dialog className='modal'>
@@ -9,7 +16,7 @@ function Modal({ isOpen, onClose, title, subTitle, content }) {
           <header className='header'>
             <h1 className='title'>{title}</h1>
             <span className='subtitle'>{subTitle}</span>
-            <button className='btn' onClick={onClose}>
+            <button ref={ref} className='btn' onClick={onClose}>
               x
             </button>
           </header>
