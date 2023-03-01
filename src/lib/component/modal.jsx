@@ -4,7 +4,7 @@ import "./modal.css"
 function Modal({ isOpen, onClose, title, subTitle, content }) {
   if (isOpen) {
     return (
-      <dialog aria-modal="true" className='modal'>
+      <dialog aria-modal="true" onClick={onClose} className='modal'>
         <section className='section'>
           <header className='header'>
             <h1 className='title'>{title}</h1>
