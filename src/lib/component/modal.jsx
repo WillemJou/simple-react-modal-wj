@@ -10,7 +10,6 @@ function Modal(props) {
     <FocusTrap>
       <dialog aria-modal="true" onClick={props.onClose} className="modal">
         <section className="section" onClick={(e) => e.stopPropagation()}>
-          <h1>Hello</h1>
           <header className="header">
             <h1 className="title">{props.title}</h1>
             <span className="subtitle">{props.subTitle}</span>
