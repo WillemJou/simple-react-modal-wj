@@ -1,24 +1,28 @@
-import React from "react"
-import "./modal.css"
+import React from 'react'
+import FocusTrap from 'focus-trap-react'
+import './modal.css'
 
-function Modal({ isOpen, onClose, title, subTitle, content }) {
-  if (isOpen) {
-    return (
-      <dialog aria-modal="true" onClick={onClose} className='modal'>
-        <section className='section'>
-          <header className='header'>
-            <h1 className='title'>{title}</h1>
-            <span className='subtitle'>{subTitle}</span>
-            <button  className='btn' onClick={onClose}>
+function Modal(props) {
+  if (!props.isOpen) {
+    return null
+  }
+  return (
+    <FocusTrap>
+      <dialog aria-modal="true" onClick={props.onClose} className="modal">
+        <section className="section" onClick={(e) => e.stopPropagation()}>
+          <header className="header">
+            <h1 className="title">{props.title}</h1>
+            <span className="subtitle">{props.subTitle}</span>
+            <button className="btn" onClick={props.onClose}>
               x
             </button>
           </header>
-          <div className='content-container'>{content}</div>
-          <footer className='footer'></footer>
+          <div className="content-container">{props.content}</div>
+          <footer className="footer"></footer>
         </section>
       </dialog>
-    )
-  }
+    </FocusTrap>
+  )
 }
 
 export default Modal
