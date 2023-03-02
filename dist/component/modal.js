@@ -19,7 +19,7 @@ function Modal(props) {
   }, /*#__PURE__*/_react.default.createElement("section", {
     className: "section",
     onClick: e => e.stopPropagation()
-  }, /*#__PURE__*/_react.default.createElement("h1", null, "Hello"), /*#__PURE__*/_react.default.createElement("header", {
+  }, /*#__PURE__*/_react.default.createElement("header", {
     className: "header"
   }, /*#__PURE__*/_react.default.createElement("h1", {
     className: "title"
