@@ -10,18 +10,19 @@ A Simple modal
 npm install --save simple-react-modal-wj
 ```
 
-## Usage
+## Usage Example
 
 ```jsx
 import { Modal } from 'simple-react-modal-wj'
 
 function EnclosingFunction() {
-  const [toggle, handleToggle] = useState(false)
+  const [openModal, setOpenModal] = useState(false)
   return (
+    <button onclick={setOpenModal}>Click to open modal 😉</button>
     <Modal
-      isOpen={toggle}
+      isOpen={openModal}
       onClose={() => {
-        handleToggle(false)
+        setOpenModal(false)
         return true
       }}
     />
