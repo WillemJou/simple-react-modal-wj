@@ -7,6 +7,7 @@ function Modal(props) {
     return null
   }
   return (
+    // use FocusTrap library to staying focus on the modal
     <FocusTrap>
       <dialog aria-modal="true" onClick={props.onClose} className="modal">
         <section className="section" onClick={(e) => e.stopPropagation()}>
